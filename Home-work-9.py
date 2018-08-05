@@ -39,10 +39,10 @@ class User():
                                 ))
         return response
 
-    def friends_mutual(self, target_uid):
+    def friends_mutual(self, source_uid, target_uid):
         response = requests.get('https://api.vk.com/method/friends.getMutual',
                                     params=dict(
-                                    source_uid=self.id,
+                                    source_uid=source_uid,
                                     target_uids=target_uid,
                                     access_token=self.token,
                                     v=5.80
@@ -69,7 +69,7 @@ if 'items' in my_user.get_friends().json()['response']:
 pprint.pprint(get_user_info(my_friends[0]))
 
 our_friends = list()
-friends = my_user.friends_mutual(my_friends).json()['response']
+friends = my_user.friends_mutual(my_user.id, my_friends).json()['response']
 if 'items' in friends:
     for i in friends['items']:
         user_info = get_user_info(i)
