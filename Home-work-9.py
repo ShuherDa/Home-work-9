@@ -13,7 +13,7 @@ auth_data = {
     'v': 5.80
 }
 # access_token = 'd6e5eb4ff52ac19df4a55c314f3bfae227d12ed5636e4fff20f97f374627d822c9ffe66ea0a51ec402a59'
-access_token= '3a12ff211ab8b2b8eb98a14700f4db7ee9cde3d6af528ee32a7b147ce14eb825cc95330d09ea96b935e73'
+access_token = '3a12ff211ab8b2b8eb98a14700f4db7ee9cde3d6af528ee32a7b147ce14eb825cc95330d09ea96b935e73'
 # print('?'.join((auth_url, urlencode(auth_data))))
 
 def get_user_info(id):
