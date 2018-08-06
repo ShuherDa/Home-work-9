@@ -36,9 +36,6 @@ class User():
     def __repr__(self):
         return self.url
 
-    def __str__(self):
-        return self.url
-
     def __and__(self, other):
         response = requests.get('https://api.vk.com/method/friends.getMutual',
                                     params=dict(
