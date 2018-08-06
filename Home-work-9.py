@@ -31,9 +31,12 @@ class User():
         self.first_name = first_name
         self.last_name = last_name
         self.token = token
-        self.url = 'vk.com/id{}'.format(id)
+        self.url = 'https://vk.com/id{}'.format(id)
 
     def __repr__(self):
+        return self.url
+
+    def __str__(self):
         return self.url
 
     def __and__(self, other):
@@ -96,4 +99,4 @@ if 'items' in my_user.get_friends().json()['response']:
     my_friends = my_user.get_friends().json()['response']['items']
 
 pprint(my_user & my_friends)
-
+print(my_user)
